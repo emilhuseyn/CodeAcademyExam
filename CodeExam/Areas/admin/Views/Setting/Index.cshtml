@@ -1,0 +1,53 @@
+﻿@model List<Setting>
+
+
+
+<style>
+    table {
+        margin-left: 300px;
+        padding: 10px;
+    }
+
+    button {
+        margin-left: 500px;
+        padding: 10px;
+    }
+    th{
+        width:0.7rem;
+        height:0.7rem;
+    }
+</style>
+<table class="table">
+    <thead>
+        <a asp-action="Edit" asp-controller="Setting">
+            <button type="button" class="btn btn-primary">Edit</button>
+        </a>
+
+        <tr>
+            
+            <th scope="col">Phone</th>
+            <th scope="col">Facebook</th>
+            <th scope="col">Twitter</th>
+            <th scope="col">Instagram</th>
+            <th scope="col">Email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var setting in Model)
+        {
+            
+            <tr>
+                
+                <td>@setting.Phone</td>
+                <td>@setting.Facebook</td>
+                <td>@setting.Twitter</td>
+                <td>@setting.Instagram</td>
+                <td>@setting.Email</td>
+               
+
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+﻿@model Chef
+
+<style>
+    body{
+        margin-left:45%;
+        
+    }
+</style>
+<div class="card" style="width: 18rem;">
+    <img src="~/Upload/Chef/@Model.ImageUrl" class="card-img-top" alt="...">
+        <h5 class="card-title">@Model.Fullname</h5>
+    <div class="card-body">
+        <p>
+           Description: @Model.Description
+        </p>
+        <p>
+
+        Created time:
+        </p>
+        <p class="card-text">@Model.CreatedTime</p>
+        <p>
+
+        Updated time:
+        </p>
+        <p class="card-text">@Model.UpdatedTime</p>
+        <a asp-action="Index" asp-controller="Chef" class="btn btn-primary">Return</a>
+    </div>
+</div>

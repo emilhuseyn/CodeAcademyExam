@@ -1,0 +1,52 @@
+﻿@model ICollection<Chef>
+
+@{
+    int count = 0;
+}
+
+<style>
+    table{
+        margin-left:300px;
+        padding:10px;
+    }
+    button{
+        margin-left: 250px;
+        padding: 10px;
+    }
+</style>
+<table class="table">
+    <thead>
+        <a asp-action="Create" asp-controller="Chef">
+        <button type="button" class="btn btn-primary">Create</button>
+            </a>
+
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @(count++)
+        <tr>
+            <th scope="row">@count</th>
+                <td>@item.Fullname</td>
+            <td>
+                <a asp-action="Update" asp-controller="Chef" asp-route-id="@item.Id">
+                    <button type="button" class="btn btn-warning">Update</button>
+                </a>
+                    <a asp-action="Delete" asp-controller="Chef" asp-route-id="@item.Id">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </a>
+                <a asp-action="Details" asp-controller="Chef" asp-route-id="@item.Id">
+                        <button type="button" class="btn btn-info">Details</button>
+                </a>
+            </td>
+            
+        </tr>
+        }
+       
+    </tbody>
+</table>
